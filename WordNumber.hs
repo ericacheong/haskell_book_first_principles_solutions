@@ -26,4 +26,5 @@ digits n
     | otherwise = digits (div n 10) ++ digits (mod n 10)
 
 wordNumber :: Int -> String
-wordNumber n = reverse $ tail $ reverse $ concat $ map (++ "-") $ map digitToWord $ digits n
+-- wordNumber n = reverse $ tail $ reverse $ concat $ map (++ "-") $ map digitToWord $ digits n
+wordNumber n = concat $ intersperse "-" $ map digitToWord $ digits n
